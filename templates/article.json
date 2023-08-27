@@ -1,0 +1,24 @@
+{
+  "sections": {
+    "main": {
+      "type": "article-template",
+      "settings": {
+      }
+    },
+    "article-comments": {
+      "type": "article-comments",
+      "settings": {
+      }
+    },
+    "article-back-to-blog": {
+      "type": "article-back-to-blog",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main",
+    "article-comments",
+    "article-back-to-blog"
+  ]
+}

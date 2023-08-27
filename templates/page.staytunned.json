@@ -1,0 +1,22 @@
+{
+  "sections": {
+    "main": {
+      "type": "page-template",
+      "settings": {
+      }
+    },
+    "2ea33de6-c908-4aa5-bd2a-cadca2f290a1": {
+      "type": "rich-text",
+      "settings": {
+        "full_width": true,
+        "section_title": "coming soon",
+        "text": "",
+        "text_size": "medium"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "2ea33de6-c908-4aa5-bd2a-cadca2f290a1"
+  ]
+}

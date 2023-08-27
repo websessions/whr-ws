@@ -1,0 +1,18 @@
+{
+  "sections": {
+    "c2b2b69d-633f-41a5-b41d-85c36ac99d2f": {
+      "type": "collection",
+      "settings": {
+        "title": "",
+        "collection": "frontpage",
+        "grid": 3,
+        "rows": 5,
+        "show_vendor": false,
+        "show_view_all": true
+      }
+    }
+  },
+  "order": [
+    "c2b2b69d-633f-41a5-b41d-85c36ac99d2f"
+  ]
+}
