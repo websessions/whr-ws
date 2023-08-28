@@ -1,22 +1,25 @@
 <div class="coming-soon-container">
-
   <div class="inner">
-    <h4>whr.institute is under construction</h4>
-    <p>sign up for updates</p>
 
+    <img loading="eager" class='comingimg' src='https://cdn.shopify.com/s/files/1/0461/5484/2275/files/whrinstitue.png?v=1693265245' />
+    
+    {% comment %} <h4>whr.institute is under construction</h4> {% endcomment %}
+
+    <br />
+    
+    <p>sign up for updates</p>
 
     <div class="site-footer__newsletter">
       {%- assign formId = 'ContactFooter' -%}
-      
+
       {%- if form.posted_successfully? -%}
-        <p class="form-message form-message--success" tabindex="-1" data-form-status>
-          thanks! we will keep you posted
-        </p>
+        <p class="form-message form-message--success" tabindex="-1" data-form-status>thanks! we will keep you posted</p>
       {%- else -%}
         {% form 'customer', id: formId, novalidate: 'novalidate' %}
           <input type="hidden" name="contact[tags]" value="newsletter">
           <div class="input-group {% if form.errors %} input-group--error{% endif %}">
-            <input type="email"
+            <input
+              type="email"
               name="contact[email]"
               id="{{ formId }}-email"
               class="input-group__field newsletter__input{% if form.errors %} input--error{% endif %}"
@@ -31,7 +34,8 @@
                 aria-invalid="true"
                 aria-describedby="{{ formId }}-email-error"
                 data-form-status
-              {% endif %}>
+              {% endif %}
+            >
             <span class="input-group__btn">
               <button type="submit" class="btn newsletter__submit" name="commit">
                 <span class="newsletter__submit-text--large">{{ 'general.newsletter_form.submit' | t }}</span>
@@ -42,14 +46,15 @@
             <span id="{{ formId }}-email-error" class="input-error-message">
               <span class="visually-hidden">{{ 'general.accessibility.error' | t }} </span>
               {% render 'icon-error' %}
-              <span class="site-footer__newsletter-error">{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}.</span>
+              <span class="site-footer__newsletter-error">
+                {{- form.errors.translated_fields.email | capitalize }}
+                {{ form.errors.messages.email }}.</span
+              >
             </span>
           {% endif %}
         {% endform %}
       {%- endif -%}
     </div>
-    
-    
   </div>
 
   <video
@@ -61,7 +66,7 @@
     height="100%"
     preload="auto"
     loop
-    poster='https://cdn.shopify.com/s/files/1/0461/5484/2275/files/poster.png?v=1693262708'
+    poster="https://cdn.shopify.com/s/files/1/0461/5484/2275/files/poster.png?v=1693262708"
   >
     <source
       src="https://player.vimeo.com/external/858803272.m3u8?s=ebaef766831970dddb888a889378f528fe9f1e0c"
@@ -72,5 +77,4 @@
       type="video/mp4"
     >
   </video>
-
 </div>
