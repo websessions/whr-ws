@@ -201,9 +201,11 @@
     {% render 'cart-popup' %}
   {%- endif -%}
 
-  {% section 'header' %}
+  {% comment %} {% section 'header' %} {% endcomment %}
 
-  <div class="page-container drawer-page-content" id="PageContainer">
+  {{ content_for_layout }}
+
+  {% comment %} <div class="page-container drawer-page-content" id="PageContainer">
 
     <main class="main-content js-focus-hidden" id="MainContent" role="main" tabindex="-1">
       {{ content_for_layout }}
@@ -215,7 +217,7 @@
       {{- 'sections.slideshow.navigation_instructions' | t -}}
     </div>
 
-  </div>
+  </div> {% endcomment %}
 
   <script type="application/json" data-cart-routes>
     {
