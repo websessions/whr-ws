@@ -2724,8 +2724,8 @@ textarea {
 
 .form-message--success {
   border: 1px solid #1F873D;
-  background-color: #f8fff9;
-  color: #1F873D;
+  background-color: lime;
+  color: black;
   display: block;
   width: 100%;
 }
