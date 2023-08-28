@@ -11,7 +11,7 @@
       {% form 'customer', id: formId, novalidate: 'novalidate' %}
         {%- if form.posted_successfully? -%}
           <p class="form-message form-message--success" tabindex="-1" data-form-status>
-            {{ 'general.newsletter_form.confirmation' | t }}
+            thanks! we'll keep you posted
           </p>
         {%- endif -%}
         <input type="hidden" name="contact[tags]" value="newsletter">
@@ -49,26 +49,25 @@
     </div>
     
   </div>
-
-  <video
-    class="comingvideo"
-    autoPlay
-    muted
-    playsInline
-    width="100%"
-    height="100%"
-    preload="auto"
-    loop
-    poster='https://cdn.shopify.com/s/files/1/0461/5484/2275/files/poster.png?v=1693262708'
-  >
-    <source
-      src="https://player.vimeo.com/external/858803272.m3u8?s=ebaef766831970dddb888a889378f528fe9f1e0c"
-      type="application/x-mpegURL"
-    >
-    <source
-      src="https://player.vimeo.com/progressive_redirect/playback/858803272/rendition/360p/file.mp4?loc=external&signature=68bfed415235d2c041f802f6e3e68f48431395773ce413ab313d2b11c1233113"
-      type="video/mp4"
-    >
-  </video>
-
 </div>
+
+<video
+  class="comingvideo"
+  autoPlay
+  muted
+  playsInline
+  width="100%"
+  height="100%"
+  preload="auto"
+  loop
+  poster='https://cdn.shopify.com/s/files/1/0461/5484/2275/files/poster.png?v=1693262708'
+>
+  <source
+    src="https://player.vimeo.com/external/858803272.m3u8?s=ebaef766831970dddb888a889378f528fe9f1e0c"
+    type="application/x-mpegURL"
+  >
+  <source
+    src="https://player.vimeo.com/progressive_redirect/playback/858803272/rendition/360p/file.mp4?loc=external&signature=68bfed415235d2c041f802f6e3e68f48431395773ce413ab313d2b11c1233113"
+    type="video/mp4"
+  >
+</video>
