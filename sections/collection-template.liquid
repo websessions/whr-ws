@@ -47,7 +47,7 @@
         </div>
       {% endif %}
     {% else %}
-      <div class="page-width">
+      {% comment %} <div class="page-width">
         <div class="section-header text-center">
           <h1>
               <span class="visually-hidden">{{ 'collections.general.collection_label' | t }}: </span>
@@ -62,7 +62,7 @@
             <span class="filters-toolbar__product-count">{{ 'collections.general.items_with_count' | t: count: collection.products_count }}</span>
           {% endif %}
         </div>
-      </div>
+      </div> {% endcomment %}
     {% endif %}
 
     {% if is_filter_by_available or section.settings.sort_enable %}
