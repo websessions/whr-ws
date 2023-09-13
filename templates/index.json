@@ -1,11 +1,5 @@
 {
   "sections": {
-    "coming-soon": {
-      "type": "coming-soon",
-      "disabled": true,
-      "settings": {
-      }
-    },
     "280c8756-3d75-4fad-ad52-8799b7e43340": {
       "type": "collection",
       "settings": {
@@ -19,7 +13,6 @@
     }
   },
   "order": [
-    "coming-soon",
     "280c8756-3d75-4fad-ad52-8799b7e43340"
   ]
 }
