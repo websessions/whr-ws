@@ -26,7 +26,8 @@
   -%}
 
   <ul class="grid grid--uniform grid--view-items">
-    {% for product in collection.products limit: product_limit %}
+    {% comment %} REDUCED LIMIT HERE {% endcomment %}
+    {% for product in collection.products limit: 100 %}
       <li class="grid__item grid__item--{{section.id}} {{ grid_item_width }}">
         {% render 'product-card-grid', max_height: max_height, product: product, show_vendor: section.settings.show_vendor %}
       </li>
@@ -50,14 +51,17 @@
     {% endfor %}
   </ul>
 
-  {% if section.settings.show_view_all %}
+
+  {% comment %} removed view all {% endcomment %}
+
+  {% comment %} {% if section.settings.show_view_all %}
     <hr class="hr--invisible" aria-hidden="true" />
     <div class="text-center">
       <a href="{{ collection.url }}" class="btn" aria-label="{{ 'collections.general.view_all_label' | t: collection_name: collection.title }}">
         {{ 'collections.general.view_all' | t }}
       </a>
     </div>
-  {% endif %}
+  {% endif %} {% endcomment %}
 
 </div>
 
