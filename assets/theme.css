@@ -1606,13 +1606,13 @@ textarea {
 }
 
 .main-content {
-  display: block;
-  padding-top: 35px;
+  /* display: block; */
+  /* padding-top: 35px; */
 }
 
 @media only screen and (min-width: 750px) {
   .main-content {
-    padding-top: 55px;
+    /* padding-top: 55px; */
   }
 }
 
@@ -9737,4 +9737,25 @@ hr {
   height: 100dvh;
   object-fit: cover;
   z-index: -1;
+}
+
+
+/* Custon Landing Page */
+
+.landingMoment {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100dvh;
+  background-color: white;
+  z-index: 100000000000000 !important;
+}
+
+.fullVid {
+  width: 100vw;
+  height: 100dvh;
+  background-color: white;
+  z-index: 100000000000000 !important;
+  object-fit: cover;
 }

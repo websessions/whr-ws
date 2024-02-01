@@ -203,6 +203,11 @@
 
   {% section 'header' %}
 
+  {% comment %} {% unless request.page_type == 'password' %}
+    {% section 'header' %}
+  {% endunless %} {% endcomment %}
+  
+
   {% comment %} {{ content_for_layout }} {% endcomment %}
 
   <div class="page-container drawer-page-content" id="PageContainer">
@@ -210,6 +215,10 @@
     <main class="main-content js-focus-hidden" id="MainContent" role="main" tabindex="-1">
       {{ content_for_layout }}
     </main>
+
+    {% comment %} {% unless request.page_type == 'password' %}
+      {% section 'footer' %}
+    {% endunless %} {% endcomment %}
 
     {% section 'footer' %}
 
