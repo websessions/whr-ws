@@ -1,0 +1,92 @@
+<div class="">
+  <div class="text-center">
+    <div class="landingMoment">
+      <span>
+        <p class="white">WHR x REEBOK</p>
+        <p class="countdown-timer" style="color: white;"></p>
+      </span>
+
+      {%- assign formId = 'ContactFooter' -%}
+      {% form 'customer', id: formId, novalidate: 'novalidate' %}
+        {% if form.posted_successfully? %}
+          <p class="form-message form-message--success" tabindex="-1" data-form-status>
+            {% comment %} {{ 'general.newsletter_form.confirmation' | t }} {% endcomment %}
+            Thanks! We'll keep you posted
+          </p>
+        {% elsif customer.name == 'anonymous' %}
+          <span id="{{ formId }}-email-error" class="input-error-message">
+            <span class="visually-hidden">{{ 'general.accessibility.error' | t }} </span>
+            {% render 'icon-error' %}
+            <span class="site-footer__newsletter-error">
+              {{- form.errors.translated_fields.email | capitalize }}
+              {{ form.errors.messages.email }}.</span
+            >
+          </span>
+        {% else %}
+          <input type="hidden" name="contact[tags]" value="newsletter">
+          <div class="input-group {% if form.errors %} input-group--error{% endif %}">
+            <input
+              type="email"
+              name="contact[email]"
+              id="{{ formId }}-email"
+              class="input-group__field newsletter__input{% if form.errors %} input--error{% endif %}"
+              value="{{ form.email }}"
+              placeholder="EMAIL"
+              aria-label="{{ 'general.newsletter_form.email_placeholder' | t }}"
+              aria-required="true"
+              required
+              autocorrect="off"
+              autocapitalize="off"
+              {% if form.errors %}
+                aria-invalid="true"
+                aria-describedby="{{ formId }}-email-error"
+                data-form-status
+              {% endif %}
+            >
+            <span class="input-group__btn">
+              <button type="submit" class="btn newsletter__submit" name="commit">
+                <span class="newsletter__submit-text--large">{{ 'general.newsletter_form.submit' | t }}</span>
+              </button>
+            </span>
+          </div>
+        {% endif %}
+      {%- endform -%}
+
+      <p>
+        <a href="/" class="btn btn--has-icon-after">
+          {{- 'enter site' -}}
+          {% comment %} {%- render 'icon-arrow-right' -%} {% endcomment %}
+        </a>
+      </p>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.404.name"
+}
+{% endschema %}
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const countdown = function () {
+      const countDownDate = new Date('Feb 9, 2024 09:00:00 PST').getTime();
+      const x = setInterval(function () {
+        const now = new Date().getTime();
+        const distance = countDownDate - now;
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        document.querySelector('.countdown-timer').innerHTML =
+          days + 'D ' + hours + 'H ' + minutes + 'M ' + seconds + 'S ';
+        if (distance < 0) {
+          clearInterval(x);
+          document.querySelector('.countdown-timer').innerHTML = 'EXPIRED';
+        }
+      }, 1000);
+    };
+    countdown();
+  });
+</script>

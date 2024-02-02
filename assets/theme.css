@@ -1608,6 +1608,7 @@ textarea {
 .main-content {
   /* display: block; */
   /* padding-top: 35px; */
+  position: relative;
 }
 
 @media only screen and (min-width: 750px) {
@@ -2790,6 +2791,32 @@ textarea {
 .input-group--error {
   margin-bottom: 11.66667px;
 }
+
+/* Center placeholder text for most modern browsers */
+.input-group__field::placeholder {
+  text-align: center;
+}
+
+/* WebKit browsers like Safari and Chrome */
+.input-group__field::-webkit-input-placeholder {
+  text-align: center;
+}
+
+/* Mozilla Firefox 19+ */
+.input-group__field::-moz-placeholder {
+  text-align: center;
+}
+
+/* Internet Explorer 10+ */
+.input-group__field:-ms-input-placeholder {
+  text-align: center;
+}
+
+/* For Mozilla Firefox 18- */
+.input-group__field:-moz-placeholder {
+  text-align: center;
+}
+
 
 .input-group__field,
 .input-group__field input,
@@ -7878,6 +7905,7 @@ hr {
 .site-footer__item-inner--newsletter .newsletter__input {
   margin: 5px 0 0 0;
   width: 100%;
+  text-align: center;
 }
 
 @media only screen and (min-width: 750px) {
@@ -9748,14 +9776,26 @@ hr {
   left: 0;
   width: 100vw;
   height: 100dvh;
-  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   z-index: 100000000000000 !important;
+  padding: 10px 0 10px 0;
+
+  .white {
+    color: white;
+    margin-bottom: 0px;
+  }
 }
 
 .fullVid {
+  position: fixed;
   width: 100vw;
   height: 100dvh;
-  background-color: white;
-  z-index: 100000000000000 !important;
+  top: 0;
+  left: 0;
+  background-color: black;
   object-fit: cover;
+  z-index: -100000000000000 !important;
 }
