@@ -703,9 +703,11 @@
       {% render 'cart-popup' %}
     {%- endif -%}
 
-    
+
+    {% section 'reebok' %}
+
     <div class="page-container drawer-page-content" id="PageContainer">
-      <main class="main-content {% if request.path == '/' %}guy{% endif %} js-focus-hidden" id="MainContent" role="main" tabindex="-1">
+      <main class="main-content js-focus-hidden" id="MainContent" role="main" tabindex="-1">
         {% section 'header' %}
         {{ content_for_layout }}
       </main>

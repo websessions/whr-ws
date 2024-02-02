@@ -1,4 +1,7 @@
-<div class="landingMoment">
+
+<div id="landingMoment" class="landingMoment">
+
+
   <video
     loop
     muted
@@ -68,11 +71,8 @@
     {% endif %}
   {%- endform -%}
 
-  <p>
-    <a href="/#shop" class="btn btn--has-icon-after">
-      {{- 'enter site' -}}
-      {% comment %} {%- render 'icon-arrow-right' -%} {% endcomment %}
-    </a>
+  <p class="btn btn--has-icon-after" id="enterSiteButton">
+    {{- 'enter site' -}}
   </p>
 </div>
 
@@ -102,5 +102,28 @@
       }, 1000);
     };
     countdown();
+    // Function to hide the landing moment and save the choice in localStorage
+    function hideLandingMoment() {
+      const landingMoment = document.getElementById('landingMoment');
+      if (landingMoment) {
+        landingMoment.style.display = 'none';
+        localStorage.setItem('landingMomentHidden', 'true');
+      }
+    }
+
+    // Check if the landing moment was previously hidden
+    if (localStorage.getItem('landingMomentHidden') === 'true') {
+      hideLandingMoment();
+    }
+
+    // Add click event listener to the "enter site" button
+    const enterSiteButton = document.getElementById('enterSiteButton');
+    if (enterSiteButton) {
+      enterSiteButton.addEventListener('click', function (event) {
+        event.preventDefault(); // Prevent the default anchor behavior
+        hideLandingMoment();
+        // No redirection is performed here
+      });
+    }
   });
 </script>
