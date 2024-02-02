@@ -703,45 +703,19 @@
       {% render 'cart-popup' %}
     {%- endif -%}
 
-    {% if page.url != '/pages/landing' %}
-      {% section 'header' %}
-    {% endif %}
+    
+    <div class="page-container drawer-page-content" id="PageContainer">
+      <main class="main-content {% if request.path == '/' %}guy{% endif %} js-focus-hidden" id="MainContent" role="main" tabindex="-1">
+        {% section 'header' %}
+        {{ content_for_layout }}
+      </main>
 
-    {% if page.url == '/pages/landing' %}
-      <video
-        loop
-        muted
-        playsInline
-        preload="auto"
-        autoPlay
-        class="fullVid"
-      >
-        <source
-          src="https://player.vimeo.com/external/908894544.m3u8?s=07c42493a5eba73a74401d2d5939fb2dd7a03fe0&logging=false"
-          type="application/x-mpegURL"
-        >
-        <source
-          src="https://player.vimeo.com/progressive_redirect/playback/908894544/rendition/540p/file.mp4?loc=external&log_user=0&signature=44886148a67aa9a7a3ea85fc3eefa837931ebe8c87fcc7402fefd5c88e30e299"
-          type="video/mp4"
-        >
-      </video>
+      {% section 'footer' %}
 
-      {{ content_for_layout }}
-    {% endif %}
-
-    {% if page.url != '/pages/landing' %}
-      <div class="page-container drawer-page-content" id="PageContainer">
-        <main class="main-content js-focus-hidden" id="MainContent" role="main" tabindex="-1">
-          {{ content_for_layout }}
-        </main>
-
-        {% section 'footer' %}
-
-        <div id="slideshow-info" class="visually-hidden" aria-hidden="true">
-          {{- 'sections.slideshow.navigation_instructions' | t -}}
-        </div>
+      <div id="slideshow-info" class="visually-hidden" aria-hidden="true">
+        {{- 'sections.slideshow.navigation_instructions' | t -}}
       </div>
-    {% endif %}
+    </div>
 
     <script type="application/json" data-cart-routes>
       {

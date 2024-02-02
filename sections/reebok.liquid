@@ -1,65 +1,79 @@
-<div class="">
-  <div class="text-center">
-    <div class="landingMoment">
-      <span>
-        <p class="white">WHR x REEBOK</p>
-        <p class="countdown-timer" style="color: white;"></p>
-      </span>
+<div class="landingMoment">
+  <video
+    loop
+    muted
+    playsInline
+    preload="auto"
+    autoPlay
+    class="fullVid"
+  >
+    <source
+      src="https://player.vimeo.com/external/908894544.m3u8?s=07c42493a5eba73a74401d2d5939fb2dd7a03fe0&logging=false"
+      type="application/x-mpegURL"
+    >
+    <source
+      src="https://player.vimeo.com/progressive_redirect/playback/908894544/rendition/720p/file.mp4?loc=external&log_user=0&signature=ae2af4197771c344fa9e7c75e1071f0ab892aa20b7849a8244d7185a1310f7d0"
+      type="video/mp4"
+    >
+  </video>
 
-      {%- assign formId = 'ContactFooter' -%}
-      {% form 'customer', id: formId, novalidate: 'novalidate' %}
-        {% if form.posted_successfully? %}
-          <p class="form-message form-message--success" tabindex="-1" data-form-status>
-            {% comment %} {{ 'general.newsletter_form.confirmation' | t }} {% endcomment %}
-            Thanks! We'll keep you posted
-          </p>
-        {% elsif customer.name == 'anonymous' %}
-          <span id="{{ formId }}-email-error" class="input-error-message">
-            <span class="visually-hidden">{{ 'general.accessibility.error' | t }} </span>
-            {% render 'icon-error' %}
-            <span class="site-footer__newsletter-error">
-              {{- form.errors.translated_fields.email | capitalize }}
-              {{ form.errors.messages.email }}.</span
-            >
-          </span>
-        {% else %}
-          <input type="hidden" name="contact[tags]" value="newsletter">
-          <div class="input-group {% if form.errors %} input-group--error{% endif %}">
-            <input
-              type="email"
-              name="contact[email]"
-              id="{{ formId }}-email"
-              class="input-group__field newsletter__input{% if form.errors %} input--error{% endif %}"
-              value="{{ form.email }}"
-              placeholder="EMAIL"
-              aria-label="{{ 'general.newsletter_form.email_placeholder' | t }}"
-              aria-required="true"
-              required
-              autocorrect="off"
-              autocapitalize="off"
-              {% if form.errors %}
-                aria-invalid="true"
-                aria-describedby="{{ formId }}-email-error"
-                data-form-status
-              {% endif %}
-            >
-            <span class="input-group__btn">
-              <button type="submit" class="btn newsletter__submit" name="commit">
-                <span class="newsletter__submit-text--large">{{ 'general.newsletter_form.submit' | t }}</span>
-              </button>
-            </span>
-          </div>
-        {% endif %}
-      {%- endform -%}
+  <span>
+    <p class="white">WHR x REEBOK</p>
+    <p class="countdown-timer" style="color: white;"></p>
+  </span>
 
-      <p>
-        <a href="/" class="btn btn--has-icon-after">
-          {{- 'enter site' -}}
-          {% comment %} {%- render 'icon-arrow-right' -%} {% endcomment %}
-        </a>
+  {%- assign formId = 'ContactFooter' -%}
+  {% form 'customer', id: formId, novalidate: 'novalidate' %}
+    {% if form.posted_successfully? %}
+      <p class="form-message form-message--success" tabindex="-1" data-form-status>
+        {% comment %} {{ 'general.newsletter_form.confirmation' | t }} {% endcomment %}
+        Thanks! We'll keep you posted
       </p>
-    </div>
-  </div>
+    {% elsif customer.name == 'anonymous' %}
+      <span id="{{ formId }}-email-error" class="input-error-message">
+        <span class="visually-hidden">{{ 'general.accessibility.error' | t }} </span>
+        {% render 'icon-error' %}
+        <span class="site-footer__newsletter-error">
+          {{- form.errors.translated_fields.email | capitalize }}
+          {{ form.errors.messages.email }}.</span
+        >
+      </span>
+    {% else %}
+      <input type="hidden" name="contact[tags]" value="newsletter">
+      <div class="input-group {% if form.errors %} input-group--error{% endif %}">
+        <input
+          type="email"
+          name="contact[email]"
+          id="{{ formId }}-email"
+          class="input-group__field newsletter__input{% if form.errors %} input--error{% endif %}"
+          value="{{ form.email }}"
+          placeholder="EMAIL"
+          aria-label="{{ 'general.newsletter_form.email_placeholder' | t }}"
+          aria-required="true"
+          required
+          autocorrect="off"
+          autocapitalize="off"
+          {% if form.errors %}
+            aria-invalid="true"
+            aria-describedby="{{ formId }}-email-error"
+            data-form-status
+          {% endif %}
+        >
+        <span class="input-group__btn">
+          <button type="submit" class="btn newsletter__submit" name="commit">
+            <span class="newsletter__submit-text--large">{{ 'general.newsletter_form.submit' | t }}</span>
+          </button>
+        </span>
+      </div>
+    {% endif %}
+  {%- endform -%}
+
+  <p>
+    <a href="/" class="btn btn--has-icon-after">
+      {{- 'enter site' -}}
+      {% comment %} {%- render 'icon-arrow-right' -%} {% endcomment %}
+    </a>
+  </p>
 </div>
 
 {% schema %}
