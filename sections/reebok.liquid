@@ -116,10 +116,9 @@
       }
     }
 
-    // Check if the landing moment was previously hidden
-    if (localStorage.getItem('landingMomentHidden') === 'true') {
+    {% comment %} if (localStorage.getItem('landingMomentHidden') === 'true') {
       hideLandingMoment();
-    }
+    } {% endcomment %}
 
     // Add click event listener to the "enter site" button
     const enterSiteButton = document.getElementById('enterSiteButton');
