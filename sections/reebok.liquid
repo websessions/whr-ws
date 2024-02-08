@@ -124,10 +124,9 @@
       }
     }
 
-    {% comment %} if (localStorage.getItem('landingMomentHidden') === 'true') {
+    if (localStorage.getItem('landingMomentHidden') === 'true') {
       hideLandingMoment();
-    } {% endcomment %}
-
+    }
     // Add click event listener to the "enter site" button
     const enterSiteButton = document.getElementById('enterSiteButton');
     if (enterSiteButton) {
