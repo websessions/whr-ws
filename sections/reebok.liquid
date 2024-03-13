@@ -14,26 +14,36 @@
       autoPlay
       class="fullVid"
     >
-      {% comment %} <source
-        src="https://player.vimeo.com/external/908894544.m3u8?s=07c42493a5eba73a74401d2d5939fb2dd7a03fe0&logging=false"
+      <source
+        src="https://player.vimeo.com/external/922777324.m3u8?s=a6d9a6cd8ecd9e1dc14783f27a137075b0ab5fd1&logging=false"
         type="application/x-mpegURL"
       >
       <source
-        src="https://player.vimeo.com/progressive_redirect/playback/908894544/rendition/720p/file.mp4?loc=external&log_user=0&signature=ae2af4197771c344fa9e7c75e1071f0ab892aa20b7849a8244d7185a1310f7d0"
+        src="https://player.vimeo.com/progressive_redirect/playback/922777324/rendition/720p/file.mp4?loc=external&log_user=0&signature=75667c97c873847c0442798c67a2144958048c2fda317a17234089a667853032"
         type="video/mp4"
-      > {% endcomment %}
+      >
+    </video>
+
+    <video
+      loop
+      muted
+      playsInline
+      preload="auto"
+      autoPlay
+      class="fullVidMobile"
+    >
       <source
-        src="https://player.vimeo.com/external/910228715.m3u8?s=2986a05482cacb48baa0dec81ea35e4ae682259c&logging=false"
+        src="https://player.vimeo.com/external/922777460.m3u8?s=81086ce09476ed76465dd7c3077a20ac1ca188a5&logging=false"
         type="application/x-mpegURL"
       >
       <source
-        src="https://player.vimeo.com/progressive_redirect/playback/910228715/rendition/540p/file.mp4?loc=external&log_user=0&signature=3c6c2527ebc1f3f1c744076be0a07c6bf205c765664a8cb47449cf6f727b00d3"
+        src="https://player.vimeo.com/progressive_redirect/playback/922777460/rendition/540p/file.mp4?loc=external&log_user=0&signature=2f250a4e68f491cc2846c81a35e704586e5787f516cc78d8a983fbc08eb78a8a"
         type="video/mp4"
       >
     </video>
 
     <span>
-      <p class="white">WHR x REEBOK</p>
+      <p class="white">WHR Spring 2024</p>
       <p class="countdown-timer" style="color: white;"></p>
     </span>
 
@@ -73,8 +83,10 @@
               aria-describedby="{{ formId }}-email-error"
               data-form-status
             {% endif %}
+            onfocus="showSubmitButton()"
+            onblur="hideSubmitButton()"
           >
-          <span class="input-group__btn">
+          <span class="input-group__btn" style="display: none;">
             <button type="submit" class="btn newsletter__submit" name="commit">
               <span class="newsletter__submit-text--large">{{ 'general.newsletter_form.submit' | t }}</span>
             </button>
@@ -96,8 +108,23 @@
 {% endschema %}
 
 <script>
+  function showSubmitButton() {
+    var submitButton = document.querySelector('.input-group__btn');
+    submitButton.style.display = 'inline-block';
+  }
+
+  function hideSubmitButton() {
+    var emailInput = document.getElementById('{{ formId }}-email');
+    if (emailInput.value === '') {
+      var submitButton = document.querySelector('.input-group__btn');
+      submitButton.style.display = 'none';
+    }
+  }
+</script>
+
+<script>
   document.addEventListener('DOMContentLoaded', function () {
-    const countdown = function () {
+    {% comment %} const countdown = function () {
       const countDownDate = new Date('Feb 9, 2024 09:00:00 PST').getTime();
       const x = setInterval(function () {
         const now = new Date().getTime();
@@ -114,7 +141,7 @@
         }
       }, 1000);
     };
-    countdown();
+    countdown(); {% endcomment %}
     // Function to hide the landing moment and save the choice in localStorage
     function hideLandingMoment() {
       const landingMoment = document.getElementById('landingMoment');
@@ -124,9 +151,10 @@
       }
     }
 
-    if (localStorage.getItem('landingMomentHidden') === 'true') {
+    {% comment %} if (localStorage.getItem('landingMomentHidden') === 'true') {
       hideLandingMoment();
-    }
+    } {% endcomment %}
+
     // Add click event listener to the "enter site" button
     const enterSiteButton = document.getElementById('enterSiteButton');
     if (enterSiteButton) {
