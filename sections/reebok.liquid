@@ -43,57 +43,59 @@
     </video>
 
     <span>
-      <p class="white">WHR Spring 2024</p>
-      <p class="countdown-timer" style="color: white;"></p>
+      <p class="white">WHR - Spring 2024</p>
+      {% comment %} <p class="countdown-timer" style="color: white; font-size: 11px">SIGN UP FOR EARLY ACCESS</p> {% endcomment %}
     </span>
 
-    {%- assign formId = 'ContactFooter' -%}
-    {% form 'customer', id: formId, novalidate: 'novalidate' %}
-      {% if form.posted_successfully? %}
-        <p class="form-message form-message--success" tabindex="-1" data-form-status>
-          {% comment %} {{ 'general.newsletter_form.confirmation' | t }} {% endcomment %}
-          Thanks! We'll keep you posted
-        </p>
-      {% elsif customer.name == 'anonymous' %}
-        <span id="{{ formId }}-email-error" class="input-error-message">
-          <span class="visually-hidden">{{ 'general.accessibility.error' | t }} </span>
-          {% render 'icon-error' %}
-          <span class="site-footer__newsletter-error">
-            {{- form.errors.translated_fields.email | capitalize }}
-            {{ form.errors.messages.email }}.</span
-          >
-        </span>
-      {% else %}
-        <input type="hidden" name="contact[tags]" value="newsletter">
-        <div class="input-group {% if form.errors %} input-group--error{% endif %}">
-          <input
-            type="email"
-            name="contact[email]"
-            id="{{ formId }}-email"
-            class="input-group__field newsletter__input{% if form.errors %} input--error{% endif %}"
-            value="{{ form.email }}"
-            placeholder="EMAIL"
-            aria-label="{{ 'general.newsletter_form.email_placeholder' | t }}"
-            aria-required="true"
-            required
-            autocorrect="off"
-            autocapitalize="off"
-            {% if form.errors %}
-              aria-invalid="true"
-              aria-describedby="{{ formId }}-email-error"
-              data-form-status
-            {% endif %}
-            onfocus="showSubmitButton()"
-            onblur="hideSubmitButton()"
-          >
-          <span class="input-group__btn" style="display: none;">
-            <button type="submit" class="btn newsletter__submit" name="commit">
-              <span class="newsletter__submit-text--large">{{ 'general.newsletter_form.submit' | t }}</span>
-            </button>
+    <div class='formCont'>
+      {%- assign formId = 'ContactFooter' -%}
+      {% form 'customer', id: formId, novalidate: 'novalidate' %}
+        {% if form.posted_successfully? %}
+          <p class="form-message form-message--success" tabindex="-1" data-form-status>
+            {% comment %} {{ 'general.newsletter_form.confirmation' | t }} {% endcomment %}
+            Thanks! We'll keep you posted
+          </p>
+        {% elsif customer.name == 'anonymous' %}
+          <span id="{{ formId }}-email-error" class="input-error-message">
+            <span class="visually-hidden">{{ 'general.accessibility.error' | t }} </span>
+            {% render 'icon-error' %}
+            <span class="site-footer__newsletter-error">
+              {{- form.errors.translated_fields.email | capitalize }}
+              {{ form.errors.messages.email }}.</span
+            >
           </span>
-        </div>
-      {% endif %}
-    {%- endform -%}
+        {% else %}
+          <input type="hidden" name="contact[tags]" value="newsletter">
+          <div class="input-group {% if form.errors %} input-group--error{% endif %}">
+            <input
+              type="email"
+              name="contact[email]"
+              id="{{ formId }}-email"
+              class="input-group__field newsletter__input{% if form.errors %} input--error{% endif %}"
+              value="{{ form.email }}"
+              placeholder="SIGN UP FOR EARLY ACCESS"
+              aria-label="{{ 'general.newsletter_form.email_placeholder' | t }}"
+              aria-required="true"
+              required
+              autocorrect="off"
+              autocapitalize="off"
+              {% if form.errors %}
+                aria-invalid="true"
+                aria-describedby="{{ formId }}-email-error"
+                data-form-status
+              {% endif %}
+              onfocus="showSubmitButton()"
+              onblur="hideSubmitButton()"
+            >
+            </div>
+            <span class="input-group__btn" style="display: none;">
+              <button type="submit" class="btn newsletter__submit" name="commit">
+                <span class="newsletter__submit-text--large">{{ 'general.newsletter_form.submit' | t }}</span>
+              </button>
+            </span>
+        {% endif %}
+      {%- endform -%}
+    </div>
 
     <p class="btn btn--has-icon-after" id="enterSiteButton">
       {{- 'enter site' -}}
