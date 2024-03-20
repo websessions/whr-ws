@@ -703,10 +703,10 @@
       {% render 'cart-popup' %}
     {%- endif -%}
 
-
+{% comment %} 
     {%- if request.path == '/' -%}
       {% section 'reebok' %}
-    {%- endif -%}
+    {%- endif -%} {% endcomment %}
 
 
     <div class="page-container drawer-page-content" id="PageContainer">

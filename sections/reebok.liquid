@@ -161,9 +161,8 @@
     const enterSiteButton = document.getElementById('enterSiteButton');
     if (enterSiteButton) {
       enterSiteButton.addEventListener('click', function (event) {
-        event.preventDefault(); // Prevent the default anchor behavior
+        event.preventDefault();
         hideLandingMoment();
-        // No redirection is performed here
       });
     }
   });
