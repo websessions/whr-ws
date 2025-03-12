@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "current": {
     "type_header_font": "courier_new_n7",
@@ -11,39 +20,35 @@
         ],
         "settings": {
           "align_logo": "center",
-          "logo": "shopify:\/\/shop_images\/whr_540x_01037288-5f61-4ceb-874d-153c12fac853.svg",
+          "logo": "shopify://shop_images/whr_540x_01037288-5f61-4ceb-874d-153c12fac853.svg",
           "logo_max_width": 225,
           "main_linklist": "",
           "message": true,
           "home_page_only": true,
           "message_text": "日本のお客様はこちらへ",
-          "message_link": "https:\/\/www.whr.jp",
+          "message_link": "https://www.whr.jp",
           "color_bg": "#ffffff",
           "color_text": "#000000"
         }
       },
       "feature-row": {
         "type": "feature-row",
-        "settings": {
-        }
+        "settings": {}
       },
       "feature-columns": {
         "type": "feature-columns",
         "blocks": {
           "feature-columns-0": {
             "type": "text_block",
-            "settings": {
-            }
+            "settings": {}
           },
           "feature-columns-1": {
             "type": "text_block",
-            "settings": {
-            }
+            "settings": {}
           },
           "feature-columns-2": {
             "type": "text_block",
-            "settings": {
-            }
+            "settings": {}
           }
         },
         "block_order": [
@@ -66,18 +71,15 @@
         "blocks": {
           "quotes-0": {
             "type": "quote",
-            "settings": {
-            }
+            "settings": {}
           },
           "quotes-1": {
             "type": "quote",
-            "settings": {
-            }
+            "settings": {}
           },
           "quotes-2": {
             "type": "quote",
-            "settings": {
-            }
+            "settings": {}
           }
         },
         "block_order": [
@@ -94,18 +96,15 @@
         "blocks": {
           "image-bar-0": {
             "type": "image",
-            "settings": {
-            }
+            "settings": {}
           },
           "image-bar-1": {
             "type": "image",
-            "settings": {
-            }
+            "settings": {}
           },
           "image-bar-2": {
             "type": "image",
-            "settings": {
-            }
+            "settings": {}
           }
         },
         "block_order": [
@@ -113,8 +112,7 @@
           "image-bar-1",
           "image-bar-2"
         ],
-        "settings": {
-        }
+        "settings": {}
       },
       "footer": {
         "type": "footer",
@@ -130,7 +128,7 @@
             "type": "text",
             "settings": {
               "title": "Web Stores",
-              "text": "<p><a href=\"https:\/\/europe.whr.institute\/\" target=\"_blank\" title=\"https:\/\/europe.whr.institute\/\">Europe<\/a> <\/p><p><a href=\"https:\/\/tatrasconceptstore.com\/pages\/westernhydrodynamicresearch\" target=\"_blank\" title=\"https:\/\/tatrasconceptstore.com\/pages\/westernhydrodynamicresearch\">Japan<\/a> <\/p><p><a href=\"https:\/\/whr.institute\/\" title=\"https:\/\/whr.institute\/\">USA<\/a><\/p>"
+              "text": "<p><a href=\"https://europe.whr.institute/\" target=\"_blank\" title=\"https://europe.whr.institute/\">Europe</a> </p><p><a href=\"https://tatrasconceptstore.com/pages/westernhydrodynamicresearch\" target=\"_blank\" title=\"https://tatrasconceptstore.com/pages/westernhydrodynamicresearch\">Japan</a> </p><p><a href=\"https://whr.institute/\" title=\"https://whr.institute/\">USA</a></p>"
             }
           },
           "footer-1": {
@@ -154,14 +152,20 @@
         }
       }
     },
-    "content_for_index": [
-
-    ],
+    "content_for_index": [],
     "blocks": {
       "855628211100114053": {
-        "type": "shopify:\/\/apps\/klaviyo-email-marketing-sms\/blocks\/klaviyo-onsite-embed\/2632fe16-c075-4321-a88b-50b567f42507",
+        "type": "shopify://apps/klaviyo-email-marketing-sms/blocks/klaviyo-onsite-embed/2632fe16-c075-4321-a88b-50b567f42507",
+        "disabled": false,
+        "settings": {}
+      },
+      "wholesale_gorilla": {
+        "type": "shopify://apps/wholesale-gorilla/blocks/wsg-header/c48d0487-dff9-41a4-94c8-ec6173fe8b8d",
         "disabled": false,
         "settings": {
+          "embed_bg_color": "#000000",
+          "embed_text_color": "#000000",
+          "embed_SPOF_label": ""
         }
       }
     }
@@ -185,26 +189,22 @@
         },
         "feature-row": {
           "type": "feature-row",
-          "settings": {
-          }
+          "settings": {}
         },
         "feature-columns": {
           "type": "feature-columns",
           "blocks": {
             "feature-columns-0": {
               "type": "text_block",
-              "settings": {
-              }
+              "settings": {}
             },
             "feature-columns-1": {
               "type": "text_block",
-              "settings": {
-              }
+              "settings": {}
             },
             "feature-columns-2": {
               "type": "text_block",
-              "settings": {
-              }
+              "settings": {}
             }
           },
           "block_order": [
@@ -233,18 +233,15 @@
           "blocks": {
             "quotes-0": {
               "type": "quote",
-              "settings": {
-              }
+              "settings": {}
             },
             "quotes-1": {
               "type": "quote",
-              "settings": {
-              }
+              "settings": {}
             },
             "quotes-2": {
               "type": "quote",
-              "settings": {
-              }
+              "settings": {}
             }
           },
           "block_order": [
@@ -261,18 +258,15 @@
           "blocks": {
             "image-bar-0": {
               "type": "image",
-              "settings": {
-              }
+              "settings": {}
             },
             "image-bar-1": {
               "type": "image",
-              "settings": {
-              }
+              "settings": {}
             },
             "image-bar-2": {
               "type": "image",
-              "settings": {
-              }
+              "settings": {}
             }
           },
           "block_order": [
@@ -280,21 +274,18 @@
             "image-bar-1",
             "image-bar-2"
           ],
-          "settings": {
-          }
+          "settings": {}
         },
         "footer": {
           "type": "footer",
           "blocks": {
             "footer-0": {
               "type": "link_list",
-              "settings": {
-              }
+              "settings": {}
             },
             "footer-1": {
               "type": "newsletter",
-              "settings": {
-              }
+              "settings": {}
             }
           },
           "block_order": [
@@ -438,23 +429,20 @@
         },
         "1492033809691": {
           "type": "map",
-          "settings": {
-          }
+          "settings": {}
         },
         "1492033877875": {
           "type": "quotes",
           "blocks": {
             "1492033877875-0": {
               "type": "quote",
-              "settings": {
-              }
+              "settings": {}
             }
           },
           "block_order": [
             "1492033877875-0"
           ],
-          "settings": {
-          }
+          "settings": {}
         },
         "1492033924902": {
           "type": "custom-content",
@@ -480,18 +468,15 @@
           "blocks": {
             "1492096252560-0": {
               "type": "featured_collection",
-              "settings": {
-              }
+              "settings": {}
             },
             "1492096252560-1": {
               "type": "featured_collection",
-              "settings": {
-              }
+              "settings": {}
             },
             "1492096252560-2": {
               "type": "featured_collection",
-              "settings": {
-              }
+              "settings": {}
             }
           },
           "block_order": [
@@ -530,18 +515,15 @@
           "blocks": {
             "link_list": {
               "type": "link_list",
-              "settings": {
-              }
+              "settings": {}
             },
             "text": {
               "type": "text",
-              "settings": {
-              }
+              "settings": {}
             },
             "newsletter": {
               "type": "newsletter",
-              "settings": {
-              }
+              "settings": {}
             }
           },
           "block_order": [
